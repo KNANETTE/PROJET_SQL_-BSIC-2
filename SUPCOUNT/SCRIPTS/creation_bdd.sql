@@ -1,5 +1,6 @@
 drop database if exists supcount;
 create database supcount;
+use supcount;
 create table utilisateur
 (
      id int auto_increment primary key,

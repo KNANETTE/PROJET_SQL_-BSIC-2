@@ -5,13 +5,14 @@ values
 ('CISSE', 'Ibrahim', 'ibrahim@gmail.com', 'hash_fictif_2', '2026-11-01'),
 ('MULLAR', 'Rosa', 'rosa@gmail.com', 'hash_fictif_3', '2026-11-01'),
 ('AKPODE', 'Franck', 'franck@gmail.com', 'hash_fictif_4', '2026-11-01'),
-('KOÏTA', 'Nana', 'nana@gmail.com', 'hash_fictif_5', '2026-11-01'),
+('KOITA', 'Nana', 'nana@gmail.com', 'hash_fictif_5', '2026-11-01'),
 ('ADOTE', 'Emeline', 'emeline@gmail.com', 'hash_fictif_6', '2026-11-01'),
 ('ROBERT', 'Lucas', 'lucas@gmail.com', 'hash_fictif_7', '2026-11-01'),
 ('ARKIATE', 'Sarah', 'sarah@gmail.com', 'hash_fictif_8', '2026-11-01'),
 ('SIMON', 'Tom', 'tom@gmail.com', 'hash_fictif_9', '2026-11-01'),
 ('TOURE', 'Madah', 'madah@gmail.com', 'hash_fictif_10', '2026-11-01'),
 ('GARCIA', 'Hugo', 'hugo@gmail.com', 'hash_fictif_11', '2026-11-01');
+
 
 
 insert into groupe( nom, description, type, date_creation)
@@ -57,7 +58,7 @@ values
 -- Weekend Rome (groupe 4)
 ('Train Rome', 180.00, '2026-11-17', 1, 4, 1),
 ('Hotel Rome', 380.00, '2026-11-17', 6, 4, 3),
-('Restaurant Trastevere', 110.00, '2026-11-18', 10, 4, 2),
+('Restaurant tropical brunch', 110.00, '2026-11-18', 10, 4, 2),
 ('Visite Colisee', 64.00, '2026-11-18', 1, 4, 5),
 ('Courses Rome', 38.50, '2026-11-19', 6, 4, 4);
 
@@ -162,4 +163,5 @@ VALUES
  '2026-11-08',
  4,
  3,
- 1);
+ 1);:
+ 

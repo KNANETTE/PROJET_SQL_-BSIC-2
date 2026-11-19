@@ -1,3 +1,4 @@
+use supcount;
 create view vue_depense_categorie as
 select
 depense.nom,
@@ -18,7 +19,7 @@ depense.nom,
   
 
 
-    create view vue_depense_utilisateur as
+    create view vue_total_paye_par_utilisateur as
 select
 utilisateur.nom,
 utilisateur.prenom,
