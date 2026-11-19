@@ -1,9 +1,10 @@
-create database if not existssupcount;
-use supcount;
+drop database if exists supcount;
+create database supcount;
 create table utilisateur
 (
      id int auto_increment primary key,
     nom varchar(100) not null,
+    prenom varchar(100) not null,
     email varchar(255) not null unique,
     mot_de_passe varchar(255) not null,
     date_creation date
@@ -13,9 +14,9 @@ create table utilisateur
 create table groupe
 (
     id int auto_increment primary key,
-    nom_groupe varchar(100) not null,
-    description_groupe varchar(255),
-    type_groupe varchar(20) not null,
+    nom varchar(100) not null,
+    description varchar(255),
+    type varchar(20) not null,
     date_creation date
 
 );
@@ -38,9 +39,9 @@ create table utilisateur_groupe (
 
 create table invitation(
     id int auto_increment primary key,
-    email_invitation varchar(255) not null,
-    date_invitation date,
+    email varchar(255) not null,
     statut varchar(50) not null,
+    date_invitation date,
     id_groupe int not null,
     id_utilisateur int not null,
     foreign key (id_groupe) references groupe(id) on delete cascade,
@@ -51,7 +52,7 @@ create table invitation(
 create table depense
 ( 
       id int auto_increment primary key, 
-      nom_depense varchar(100) not null,
+      nom varchar(100) not null,
       montant_depense decimal(10,2) not null,
       date_depense date not null,
       id_utilisateur int not null,
@@ -76,8 +77,8 @@ create table depense_utilisateur
 
 create table justificatif (
     id int auto_increment primary key,
-    nom_du_fichier varchar(255) not null,
-    url_fichier varchar(255) not null,
+    nom varchar(255) not null,
+    url varchar(255) not null,
     date_justificatif date not null,
     id_depense int not null unique,
     foreign key (id_depense) references depense(id) on delete cascade
