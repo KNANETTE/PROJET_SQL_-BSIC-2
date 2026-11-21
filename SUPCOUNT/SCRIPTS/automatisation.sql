@@ -1,3 +1,6 @@
+ use supcount;
+
+drop trigger if exists verif_montant_depense;
 delimiter //
 create trigger verif_montant_depense
 before insert on depense
@@ -9,7 +12,7 @@ end if;
 end //
 delimiter ;
 
-
+drop trigger if exists verif_montant_remboursement;
 delimiter //
 create trigger verif_montant_remboursement
 before insert on remboursement
@@ -21,19 +24,21 @@ end if;
 end //
 delimiter ;
 
-
+drop event if exists suppression_invitation_refusee;
 create event suppression_invitation_refusee
 on schedule every 1 month
-do 
-delete from invitation 
-where statut = 'refusee'; 
+do
+    delete from invitation
+    where statut = 'refusee'
+    and date_invitation < date_sub(curdate(), interval 30 day);
 
+drop event if exists suppression_invitation_en_attente;
 create event suppression_invitation_en_attente
 on schedule every 1 month
-do 
-delete from invitation 
-where statut = 'en attente'; 
+do
+    delete from invitation
+    where statut = 'en attente'
+    and date_invitation < date_sub(curdate(), interval 30 day);
 
-
-
-
+ -- Active le planificateur d'événements (nécessite un compte administrateur)
+set global event_scheduler = on;
