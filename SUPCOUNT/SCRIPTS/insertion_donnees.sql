@@ -43,19 +43,18 @@ VALUES
 insert into depense (nom, montant_depense, date_depense, id_utilisateur, id_groupe, id_categorie)
 values
 
--- Colocation Paris (groupe 2)
 ('Loyer novembre', 1200.00, '2026-11-01', 6, 2, 3),
 ('Courses semaine', 85.50, '2026-11-03', 7, 2, 4),
 ('Electricite', 64.30, '2026-11-08', 1, 2, 3),
 ('Pizza entre colocs', 48.00, '2026-11-10', 6, 2, 2),
 ('Courses weekend', 72.40, '2026-11-14', 7, 2, 4),
--- Vacances Barcelone (groupe 3)
+
 ('Billets avion', 420.00, '2026-11-12', 8, 3, 1),
 ('Appartement Barcelone', 540.00, '2026-11-13', 10, 3, 3),
 ('Tapas', 96.00, '2026-11-14', 9, 3, 2),
 ('Visite Sagrada Familia', 120.00, '2026-11-15', 8, 3, 5),
 ('Metro et taxis', 55.00, '2026-11-15', 10, 3, 1),
--- Weekend Rome (groupe 4)
+
 ('Train Rome', 180.00, '2026-11-17', 1, 4, 1),
 ('Hotel Rome', 380.00, '2026-11-17', 6, 4, 3),
 ('Restaurant tropical brunch', 110.00, '2026-11-18', 10, 4, 2),
@@ -64,19 +63,18 @@ values
 
 insert into depense_utilisateur (id_depense, id_utilisateur)
 values
--- Colocation Paris (membres 1, 6, 7)
 (6,1),(6,6),(6,7),
 (7,1),(7,6),(7,7),
 (8,1),(8,6),(8,7),
 (9,6),(9,7),
 (10,1),(10,7),
--- Vacances Barcelone (membres 8, 9, 10)
+
 (11,8),(11,9),(11,10),
 (12,8),(12,9),(12,10),
 (13,9),(13,10),
 (14,8),(14,9),
 (15,8),(15,10),
--- Weekend Rome (membres 1, 6, 10)
+
 (16,1),(16,6),(16,10),
 (17,1),(17,6),(17,10),
 (18,6),(18,10),
@@ -86,24 +84,19 @@ values
 INSERT INTO utilisateur_groupe
 (id_utilisateur, id_groupe, date_adhesion)
 VALUES
-
--- Weekend Suisse
 (2,1,'2026-11-01'),
 (3,1,'2026-11-01'),
 (4,1,'2026-11-01'),
 (5,1,'2026-11-01'),
 
--- Colocation Paris
 (1,2,'2026-11-01'),
 (6,2,'2026-11-01'),
 (7,2,'2026-11-01'),
 
--- Vacances Barcelone
 (8,3,'2026-11-01'),
 (9,3,'2026-11-01'),
 (10,3,'2026-11-01'),
 
--- Weekend Rome
 (1,4,'2026-11-01'),
 (6,4,'2026-11-01'),
 (10,4,'2026-11-01');

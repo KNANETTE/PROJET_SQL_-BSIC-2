@@ -40,5 +40,5 @@ do
     where statut = 'en attente'
     and date_invitation < date_sub(curdate(), interval 30 day);
 
- -- Active le planificateur d'événements (nécessite un compte administrateur)
+
 set global event_scheduler = on;
